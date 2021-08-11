@@ -26,9 +26,9 @@ function changeColor() {
 let timerId = null;
 
 function startClick() {
-    timerId = timerId ? timerId : setInterval(() => changeColor()
-, 500)
-
+//     timerId = timerId ? timerId : setInterval(() => changeColor()
+// , 1000)
+timerId = setInterval(changeColor, 1000);
  refs.stop.removeAttribute('disabled');
  refs.start.setAttribute('disabled', true);
 
@@ -37,7 +37,7 @@ function startClick() {
  
 function stopClick() {
   clearInterval(timerId);
-  refs.start.removeAttribute('disabled');
+  refs.start.removeAttribute('disabled', true);
   refs.stop.setAttribute('disabled', true);
   console.log('stop');
 }
